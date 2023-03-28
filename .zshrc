@@ -114,5 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lls="ls -alt"
 alias flameshot="flatpak run org.flameshot.Flameshot"
+alias treee="tree -alts -I .git"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
