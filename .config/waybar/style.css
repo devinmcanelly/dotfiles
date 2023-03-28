@@ -1,4 +1,5 @@
-/* This is the default style from waybar GH*/
+@define-color fontcolor #5A5A5A;
+@define-color periwinkle #CCCCFF;
 
 *  {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -7,8 +8,9 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(3, 109, 190, 0.5);
+    
+    background-color: #390d64;
+    border-bottom: 3px solid @periwinkle;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -28,7 +30,7 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: #ff0000;
 }
 
 window#waybar.chromium {
@@ -53,16 +55,16 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: @fontcolor;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(67, 40, 92, 0.2);
 }
 
 #workspaces button.focused {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #ba12b7;
 }
 
 #workspaces button.urgent {
@@ -70,8 +72,8 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: #7d0e91;
+    border-bottom: 3px solid #14163b;
 }
 
 #clock,
@@ -113,17 +115,20 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    /* background-color: #64727D; */
+    border-bottom: 2px solid #64727D;
+    color: @fontcolor;
 }
 
 #battery {
-    background-color: #194eca;
-    color: #000000;
+   border-bottom: #194eca;
+   color: @fontcolor;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: @fontcolor;
+    border-bottom: 4px solid #26A65B;
+
 }
 
 @keyframes blink {
@@ -148,24 +153,31 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    border-bottom: 2px solid #2ecc71;
+    color: @fontcolor;
 }
 
 #memory {
-    background-color: #9b59b6;
+    border-bottom: 2px solid #9b59b6;
+    color: @fontcolor;
+    
 }
 
 #disk {
     background-color: #964B00;
+    color: @fontcolor;
 }
 
 #backlight {
-    background-color: #90b1b1;
+    border-bottom: #90b1b1;
+    color: @fontcolor;
 }
 
+
 #network {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
+    border-bottom: 3px solid #2980b9;
+    color: @fontcolor;
 }
 
 #network.disconnected {
@@ -173,17 +185,18 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    /* background-color: #aa52d9; */
+    border-bottom: 3 solid #aa52d9;
+    color: @fontcolor;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
-    color: #2a5c45;
+    color: @fontcolor;
 }
 
 #wireplumber {
-    background-color: #fff0f5;
+    background-color: #ffff03;
     color: #000000;
 }
 
@@ -206,7 +219,8 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    border-bottom: 2px solid #f0932b;
+    color: @fontcolor;
 }
 
 #temperature.critical {
@@ -214,7 +228,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    border-bottom: #2980b9;
 }
 
 #tray > .passive {
@@ -227,12 +241,13 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    border-bottom:  #2d3436;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    border-bottom: 4 solid red;
+    border-top: 4 solid red;
+    color: red;
 }
 
 #mpd {
