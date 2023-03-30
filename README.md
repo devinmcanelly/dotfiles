@@ -1,30 +1,33 @@
 # Dotfiles. Anything system critical belongs here.
 
 Can toolbox configs go in here?
-git global configs
+
 
 ## General rules:
 * Don't touch conf.bac.
 
 
-## Waybar: 
+### Waybar: 
 config - Defines objects for style.css
 css/style.disto - style.css shipped with Sericea
 css/style.css.1 -- Simple Fallback.
 css/style.css.bac -- example setup
 
-## Sway
+### Sway
 * Mostly finished
 	* Screenshot keybind
 
-## Alacritty
+### Alacritty
 * Fix fonts to be uniform system-wide
 
-## NVim
+### NVim
 * Get powerbar working
 * Spellcheck
 * Python synax / OpenAI Plugin
 
-## Oh-My-Zsh
+### Oh-My-Zsh
 * Get plugins, themes, etc, that I'm using in here.
 Find rofi conf
+
+## Git
+* git global configs
