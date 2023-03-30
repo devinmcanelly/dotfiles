@@ -30,7 +30,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # Requires: desktop-backgrounds-compat, swaybg
 output * bg ~/Pictures/backgrounds/f38.png fill
 output eDP-1 {
-    bg ~/Pictures/backgrounds/titan-saturn.jpg fit #CCCCFF
+    bg ~/Pictures/backgrounds/titan-saturn.jpg stretch #CCCCFF
     transform normal
     max_render_time 3
     adaptive_sync on
