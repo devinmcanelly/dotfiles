@@ -27,3 +27,7 @@ css/style.css.bac -- example setup
 
 ## Oh-My-Zsh
 * Get plugins, themes, etc, that I'm using in here.
+
+## To-Add
+* Pure shell theme
+* taskwarrior
