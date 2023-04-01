@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 /* This is the default style from waybar GH*/
+=======
+@define-color fontcolor #ceedd2;
+@define-color periwinkle #CCCCFF;
+>>>>>>> Stashed changes
 
 *  {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -7,8 +12,14 @@
 }
 
 window#waybar {
+<<<<<<< Updated upstream
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 3px solid rgba(3, 109, 190, 0.5);
+=======
+    
+    background-color: #83728c;
+    border-bottom: 2px solid @periwinkle;
+>>>>>>> Stashed changes
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -113,7 +124,13 @@ button:hover {
 }
 
 #clock {
+<<<<<<< Updated upstream
     background-color: #64727D;
+=======
+    /* background-color: #64727D; */
+    border-bottom: 2px solid #ceedd2;
+    color: @fontcolor;
+>>>>>>> Stashed changes
 }
 
 #battery {
@@ -231,8 +248,14 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
+<<<<<<< Updated upstream
     background-color: #ecf0f1;
     color: #2d3436;
+=======
+    border-bottom: 4 solid #ceedd2;
+    border-top: 4 solid #ceedd2;
+    color: red;
+>>>>>>> Stashed changes
 }
 
 #mpd {
