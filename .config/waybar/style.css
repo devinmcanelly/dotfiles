@@ -1,4 +1,4 @@
-@define-color fontcolor #5A5A5A;
+@define-color fontcolor #C0C0C0;
 @define-color periwinkle #CCCCFF;
 
 *  {
@@ -116,7 +116,7 @@ button:hover {
 
 #clock {
     /* background-color: #64727D; */
-    border-bottom: 2px solid #64727D;
+    border-top: 1px solid @periwinkle;
     color: @fontcolor;
 }
 
@@ -245,9 +245,8 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-    border-bottom: 4 solid red;
-    border-top: 4 solid red;
-    color: red;
+
+    color: rgb(138, 20, 20);
 }
 
 #mpd {
