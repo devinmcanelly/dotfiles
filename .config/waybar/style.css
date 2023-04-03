@@ -4,7 +4,7 @@
 *  {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 window#waybar {
@@ -63,8 +63,9 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #3c2642;
     box-shadow: inset 0 -3px #ba12b7;
+    color: #000000;
 }
 
 #workspaces button.urgent {
