@@ -15,7 +15,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/var/home/devin/.task
+data.location=/home/devin/.task
 
 # To use the default location of the XDG directories,
 # move this configuration file from ~/.taskrc to ~/.config/task/taskrc and uncomment below
@@ -31,7 +31,7 @@ data.location=/var/home/devin/.task
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
-include dark-violets-256.theme
+#include dark-violets-256.theme
 #include dark-yellow-green.theme
 #include dark-gray-256.theme
 #include dark-gray-blue-256.theme

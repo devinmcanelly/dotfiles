@@ -107,18 +107,4 @@ source $ZSH/oh-my-zsh.sh
 alias lls="ls -alt"
 alias treee="tree -alts -L 2 -I .git -I .ipynb_checkpoints -I .idea -I __pycache__"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/var/home/devin/src/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/var/home/devin/src/.anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/var/home/devin/src/.anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/var/home/devin/src/.anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+alias sys="distrobox enter system"
