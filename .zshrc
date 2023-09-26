@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="random"
-#ZSH_THEME_RANDOM_CANDIDATES=( "rkj-repos" "sonicradish" "muse" "humza" "kiwi" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "rkj-repos" "sonicradish" "muse" "humza" "kiwi" "agnoster" )
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +77,7 @@ plugins=(
     colored-man-pages
 )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -106,5 +106,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lls="ls -alt"
 alias treee="tree -alts -L 2 -I .git -I .ipynb_checkpoints -I .idea -I __pycache__"
-
 alias sys="distrobox enter system"
