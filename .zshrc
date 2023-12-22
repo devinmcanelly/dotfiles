@@ -106,4 +106,6 @@ plugins=(
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lls="ls -alt"
 alias treee="tree -alts -L 2 -I .git -I .ipynb_checkpoints -I .idea -I __pycache__"
-alias sys="distrobox enter system"
+alias taskls='clear;task project:blog;task project:aiprof; task project:budgetbuddy'
+
+alias py-shell=nix-shell ~/src/shell.nix
