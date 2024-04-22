@@ -1,0 +1,18 @@
+theme = "everforest_dark"
+[editor]
+color-modes = true
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "underline"
+select = "hidden"
+
+[editor.indent-guides]
+render = true
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.whitespace]
+render = "all"
