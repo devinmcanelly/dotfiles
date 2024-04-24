@@ -1,38 +1,21 @@
-# Dotfiles. Anything system critical belongs here.
+# Hyprland + Helix
 
-Can toolbox configs go in here?
+## TODO:
+* Qt Theming
+    * Some icons are still missing, waybar looks OK though.
+    * Switch to semi-dark theme
 
+* Hypr
+  * Hypridle is mostly working, but hyprlock isn't there yet
+  * Slurp to clipboard
+    * Keybinds in general need reworking.
+  * Waybar could look better
+  * Mess around with wofi
 
-## General rules:
-* Don't touch conf.bac.
+* Bash / cron
+  * Add scripts for:
+      * Kill your darlings
+      * backup ~/
+      * Adv keybinds:
+        * Clear workspaces & open devEnv
 
-
-### Waybar: 
-config - Defines objects for style.css
-css/style.disto - style.css shipped with Sericea
-css/style.css.1 -- Simple Fallback.
-css/style.css.bac -- example setup
-
-### Sway
-* Mostly finished
-	* Screenshot keybind
-	* map mouse buttons
-		* meta+up/down cycles workspaces
-		* meta+middle rkill
-
-### Alacritty
-* Fix fonts to be uniform system-wide
-* fix colors
-
-### NVim
-* Spellcheck
-* Python synax / OpenAI Plugin
-* line numbers
-
-### Oh-My-Zsh
-* Get plugins, themes, etc, that I'm using in here.
-
-
-## To-Add
-* redshift
-* git global configs
