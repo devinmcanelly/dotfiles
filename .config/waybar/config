@@ -5,56 +5,24 @@
 	"position": "top",
 
 	"modules-left": [
-		"hyprland/workspaces",
-		"custom/right-arrow-dark"
+		"hyprland/workspaces"
+
 	],
 	"modules-center": [
-		"custom/left-arrow-dark",
+	
 		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"clock#3",
-		"custom/right-arrow-dark"
+		"clock#3"
 	],
 	"modules-right": [
-		"custom/left-arrow-dark",
 		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"cpu",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"disk",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
+		"battery",
 		"tray"
 	],
 
-	"custom/left-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
 
 	"hyprland/workspaces": {
 		"disable-scroll": true,
@@ -62,10 +30,15 @@
 		"format": "{name}: {icon}",
 		"format-icons": {
 			"1": "",
-			"2": "",
+			"2": "",
 			"3": "",
-			"4": "",
+			"4": "",
 			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
+			"10": "",
 			"urgent": "",
 			"focused": "",
 			"default": ""
@@ -102,11 +75,17 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": " 󰍛 {}%"
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}%"
+		"format": " 󰺟 {usage:2}%"
+	},
+		"disk": {
+		"interval": 5,
+		"format": " 󰋊 {percentage_used:2}%",
+		
+		"path": "/"
 	},
 	"battery": {
 		"states": {
@@ -123,11 +102,7 @@
 			""
 		]
 	},
-	"disk": {
-		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
-		"path": "/"
-	},
+
 	"tray": {
 		"icon-size": 20
 	}

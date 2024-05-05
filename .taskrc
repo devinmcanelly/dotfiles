@@ -33,7 +33,7 @@ data.location=/home/devin/.task
 #include dark-blue-256.theme
 #include dark-violets-256.theme
 #include dark-yellow-green.theme
-#include dark-gray-256.theme
+include dark-gray-256.theme
 #include dark-gray-blue-256.theme
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
@@ -52,4 +52,4 @@ report._reviewed.description=Tasksh review report.  Adjust the filter to your ne
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
-uda.priority.values=H,M,,L
+uda.priority.values=P,H,M,,L

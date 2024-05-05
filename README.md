@@ -1,21 +1,21 @@
 # Hyprland + Helix
 
 ## TODO:
-* Qt Theming
-    * Some icons are still missing, waybar looks OK though.
-    * Switch to semi-dark theme
+* Setup GTK apps
 
 * Hypr
-  * Hypridle is mostly working, but hyprlock isn't there yet
-  * Slurp to clipboard
-    * Keybinds in general need reworking.
+  * Keybinds in general need reworking.
+  * Clear workspaces & open devEnv
   * Waybar could look better
+    * workspace icons aren't lining up correctly.
   * Mess around with wofi
 
 * Bash / cron
   * Add scripts for:
       * Kill your darlings
       * backup ~/
-      * Adv keybinds:
-        * Clear workspaces & open devEnv
-
+      
+### Thanks
+  @cjbassi -- Waybar config started from [Github Config](https://github.com/cjbassi/config)
+  @Zaney -- HyprConfig got started here. Checkout [ZaneyOS](https://gitlab.com/Zaney/zaneyos)
+  
