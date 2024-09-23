@@ -1,21 +1,17 @@
-# Hyprland + Helix
-
-## TODO:
-* Setup GTK apps
-
-* Hypr
-  * Keybinds in general need reworking.
-  * Clear workspaces & open devEnv
-  * Waybar could look better
-    * workspace icons aren't lining up correctly.
-  * Mess around with wofi
-
-* Bash / cron
-  * Add scripts for:
-      * Kill your darlings
-      * backup ~/
-      
-### Thanks
++#AUTHOR: Devin McAnelly
++#TITLE: Dotfiles
+* ToDos
+** Setup auto-venv
+** 
+** Fix Clipboard integration
+*** X11 & killring aren't playing nicely. 
+**** What's a killring?
+** Bash / cron
+*** Add scripts for:
+**** Kill your darlings
+**** backup ~/
+* Thanks
   @cjbassi -- Waybar config started from [Github Config](https://github.com/cjbassi/config)
   @Zaney -- HyprConfig got started here. Checkout [ZaneyOS](https://gitlab.com/Zaney/zaneyos)
+  @systemcrafters  -- Started with this emacs config
   
