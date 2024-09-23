@@ -1,2 +1,6 @@
-.dotfiles.code-workspace
-spotifyd
+/.config/emacs/*
+!/.config/emacs/init.el
+!/.config/emacs/custom-vars.el
+*~
+.\#*
+\#*\#
