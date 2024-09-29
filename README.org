@@ -1,17 +1,22 @@
 +#AUTHOR: Devin McAnelly
 +#TITLE: Dotfiles
 * ToDos
-** Setup auto-venv
-** 
+** - Org Mode
+*** - Search project directories
+*** - setup clock in / out
+*** - taskdump
+** - Add Bashrc
+** - check webi installs
 ** Fix Clipboard integration
-*** X11 & killring aren't playing nicely. 
+*** wayland & killring aren't playing much better. 
 **** What's a killring?
-** Bash / cron
-*** Add scripts for:
-**** Kill your darlings
-**** backup ~/
+
+** Add scripts for:
+** Kill your darlings
+** fix symlinks.
+
+
 * Thanks
-  @cjbassi -- Waybar config started from [Github Config](https://github.com/cjbassi/config)
   @Zaney -- HyprConfig got started here. Checkout [ZaneyOS](https://gitlab.com/Zaney/zaneyos)
   @systemcrafters  -- Started with this emacs config
   
