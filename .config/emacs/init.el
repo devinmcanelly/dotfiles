@@ -136,6 +136,9 @@
 (add-hook 'eshell-directory-change-hook #'activate-venv-for-shell)
 (add-hook 'eshell-mode-hook #'activate-venv-for-shell)
 (add-hook 'shell-mode-hook #'activate-venv-for-shell)
+(setq python-shell-interpreter "ipython")
+(setq python-shell-interpreter-args "--pylab")
+
 
 ;; Org Mode
 (defun dw/org-mode-setup ()

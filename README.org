@@ -8,12 +8,11 @@
 ** - Add Bashrc
 ** - check webi installs
 ** Fix Clipboard integration
-*** wayland & killring aren't playing much better. 
-**** What's a killring?
+***  What's a killring?
 
 ** Add scripts for:
-** Kill your darlings
-** fix symlinks.
+*** Kill your darlings
+*** fix symlinks.
 
 
 * Thanks

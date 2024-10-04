@@ -2,5 +2,6 @@
 !/.config/emacs/init.el
 !/.config/emacs/custom-vars.el
 *~
-.\#*
+\#.*
 \#*\#
+\#*
