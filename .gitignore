@@ -1,6 +1,6 @@
-/.config/emacs/*
-!/.config/emacs/init.el
-!/.config/emacs/custom-vars.el
+.emacs.d/*
+!.emacs.d/init.el
+!.emacs.d/custom-vars.el
 *~
 \#.*
 \#*\#
