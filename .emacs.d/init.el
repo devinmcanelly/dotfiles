@@ -14,15 +14,25 @@
       ;; inhibit-startup-message t  // after you finish reading the manual..
       ;; or customize the startup message.
       )
-      
+(require 'package)
+(package-initialize)
+(unless package-archive-contents
+ (package-refresh-contents))
+(unless (package-installed-p 'use-package) ;;; Pretty sure this bit installs package, then use-package? unless it's already installed? 
+   (package-install 'use-package))
+(require 'use-package)     
+
+(setq custom-file (locate-user-emacs-file "custom-vars.el")) ; Using this, emacs can boot into my config
+(load custom-file 'noerror 'nomessage)                       ; from a fresh-install
+
 (menu-bar-mode 1)  ; Leave this one on if you're a beginner!
 (tool-bar-mode 1)
-
 (scroll-bar-mode -1)
 (hl-line-mode 1)
 (column-number-mode)
 (global-display-line-numbers-mode 1)
-(load-theme 'wombat)
+(use-package material-theme)
+(load-theme 'material t)
 (save-place-mode 1)
 (savehist-mode 1)
 (global-auto-revert-mode 1)
@@ -54,25 +64,23 @@
 (global-unset-key (kbd "C-v")) 
 (global-unset-key (kbd "M-v"))  
 
-(setq custom-file (locate-user-emacs-file "custom-vars.el")) ; Using this, emacs can boot into my config
-(load custom-file 'noerror 'nomessage)                       ; from a fresh-install
+
 
 ;; Disable line numbers for some modes
 (dolist (mode '(org-mode-hook
                 term-mode-hook
-                eshell-mode-hook))
+                eshell-mode-hook)) ; not working for shell
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-(require 'package)
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face lines-tail))
+(defun enable-whitespace-mode ()
+  (whitespace-mode 1))
+(add-hook 'prog-mode-hook #'enable-whitespace-mode)
 
-(package-initialize)
-(unless package-archive-contents
- (package-refresh-contents))
+(use-package company)
 
-(unless (package-installed-p 'use-package) ;;; Pretty sure this bit installs package, then use-package? unless it's already installed? 
-   (package-install 'use-package))
-
-(require 'use-package)
 
 ;; General Packages: 
 (use-package which-key
@@ -188,3 +196,4 @@
 (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+(put 'narrow-to-region 'disabled nil)
