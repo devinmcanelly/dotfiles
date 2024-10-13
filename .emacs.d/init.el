@@ -1,10 +1,7 @@
-
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
                          ("elpa" . "https://elpa.gnu.org/packages/"))
-
-      
-      indent-tabs-mode nil
+      aindent-tabs-mode nil
       python-indent-offset 4
       use-package-always-ensure t
       visible-bell t           
@@ -24,7 +21,7 @@
 
 (setq custom-file (locate-user-emacs-file "custom-vars.el")) ; Using this, emacs can boot into my config
 (load custom-file 'noerror 'nomessage)                       ; from a fresh-install
-
+(set-frame-font "opendyslexic 12")
 (menu-bar-mode 1)  ; Leave this one on if you're a beginner!
 (tool-bar-mode 1)
 (scroll-bar-mode -1)
