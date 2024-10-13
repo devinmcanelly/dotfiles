@@ -46,7 +46,7 @@
 
 (global-set-key (kbd "M-<left>")  'backward-word)
 (global-set-key (kbd "M-<right>") 'forward-word)
-(global-set-key (kbd "M-<Up>")    'backward-paragraph)
+(global-set-key (kbd "M-<up>")    'backward-paragraph)
 (global-set-key (kbd "M-<down>")  'forward-paragraph)
 
 (global-set-key (kbd "<prior>") 'scroll-down-command)  ;; PgUp
