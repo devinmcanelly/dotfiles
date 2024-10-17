@@ -3,19 +3,17 @@
 * ToDos
 ** - Org Mode
 *** - Search project directories
-*** - setup clock in / out
-*** - taskdump
-** - Add Bashrc
+*** - Add Bashrc
 ** - check webi installs
 ** Fix Clipboard integration
 ***  What's a killring?
 
 ** Add scripts for:
 *** Kill your darlings
-*** fix symlinks.
-
-
+~ 
+- [ ] Except
+ local:
+  - .*
+*** 
 * Thanks
-  @Zaney -- HyprConfig got started here. Checkout [ZaneyOS](https://gitlab.com/Zaney/zaneyos)
   @systemcrafters  -- Started with this emacs config
-  

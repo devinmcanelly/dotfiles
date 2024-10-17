@@ -2,12 +2,13 @@
                          ("org" . "https://orgmode.org/elpa/")
                          ("elpa" . "https://elpa.gnu.org/packages/"))
       aindent-tabs-mode nil
-      python-indent-offset 4
+      python-indent-offset 4 ;; TODO: Decide if putting these all up top was foolish? 
       use-package-always-ensure t
       visible-bell t           
       history-length 25
       global-auto-revert-mode 1
       select-enable-clipboard t
+      org-agenda-window-setup 'current-window
       ;; inhibit-startup-message t  // after you finish reading the manual..
       ;; or customize the startup message.
       )
@@ -21,7 +22,8 @@
 
 (setq custom-file (locate-user-emacs-file "custom-vars.el")) ; Using this, emacs can boot into my config
 (load custom-file 'noerror 'nomessage)                       ; from a fresh-install
-(set-frame-font "opendyslexic 12")
+(add-to-list 'default-frame-alist
+	     '(font . "opendyslexicmono-9"))
 (menu-bar-mode 1)  ; Leave this one on if you're a beginner!
 (tool-bar-mode 1)
 (scroll-bar-mode -1)
@@ -49,7 +51,9 @@
 (global-set-key (kbd "<prior>") 'scroll-down-command)  ;; PgUp
 (global-set-key (kbd "<next>")  'scroll-up-command)    ;; PgDn
 
-;; Unbind the original keybindings
+(global-set-key (kbd "C-c a") 'my/org-agenda-week)
+
+;; Unbind the original keybindings for the movement commands
 (global-unset-key (kbd "C-b"))  
 (global-unset-key (kbd "C-f"))  
 (global-unset-key (kbd "C-n"))  
@@ -145,7 +149,7 @@
 (setq python-shell-interpreter-args "--pylab")
 
 
-;; Org Mode
+;; Org Mode Setup
 (defun dw/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1)
@@ -153,11 +157,76 @@
   (visual-line-mode 1)
   (setq evil-auto-indent nil))
 
+(defun my/org-agenda-week ()
+  (interactive)
+  (org-agenda nil "a"))
+
 (use-package org
   :hook (org-mode . dw/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"
-        org-hide-emphasis-markers t))
+        org-hide-emphasis-markers nil
+        org-agenda-start-with-log-mode t
+        org-log-done 'time
+        org-log-into-drawer t
+        org-agenda-files '("~/src/tasks.org"
+                           "~/src/top.org"
+			   "~/.dotfiles/README.org")
+        org-habit-graph-column 60
+        org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+          (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+
+  (require 'org-habit)
+  (add-to-list 'org-modules 'org-habit)
+
+  ;; Configure custom agenda views
+  (setq org-agenda-custom-commands
+        '(("d" "Dashboard"
+           ((agenda "" ((org-deadline-warning-days 7)))
+            (todo "NEXT"
+                  ((org-agenda-overriding-header "Next Tasks")))
+            (tags-todo "agenda/ACTIVE" ((org-agenda-overriding-header "Active Projects")))))
+
+          ("n" "Next Tasks"
+           ((todo "NEXT"
+                  ((org-agenda-overriding-header "Next Tasks")))))
+
+          ("W" "Work Tasks" tags-todo "+work-email")
+
+          ;; Low-effort next actions
+          ("e" tags-todo "+TODO=\"NEXT\"+Effort<15&+Effort>0"
+           ((org-agenda-overriding-header "Low Effort Tasks")
+            (org-agenda-max-todos 20)
+            (org-agenda-files org-agenda-files)))
+
+          ("w" "Workflow Status"
+           ((todo "WAIT"
+                  ((org-agenda-overriding-header "Waiting on External")
+                   (org-agenda-files org-agenda-files)))
+            (todo "REVIEW"
+                  ((org-agenda-overriding-header "In Review")
+                   (org-agenda-files org-agenda-files)))
+            (todo "PLAN"
+                  ((org-agenda-overriding-header "In Planning")
+                   (org-agenda-todo-list-sublevels nil)
+                   (org-agenda-files org-agenda-files)))
+            (todo "BACKLOG"
+                  ((org-agenda-overriding-header "Project Backlog")
+                   (org-agenda-todo-list-sublevels nil)
+                   (org-agenda-files org-agenda-files)))
+            (todo "READY"
+                  ((org-agenda-overriding-header "Ready for Work")
+                   (org-agenda-files org-agenda-files)))
+            (todo "ACTIVE"
+                  ((org-agenda-overriding-header "Active Projects")
+                   (org-agenda-files org-agenda-files)))
+            (todo "COMPLETED"
+                  ((org-agenda-overriding-header "Completed Projects")
+                   (org-agenda-files org-agenda-files)))
+            (todo "CANC"
+                  ((org-agenda-overriding-header "Cancelled Projects")
+                   (org-agenda-files org-agenda-files))))))))
 
 (use-package org-bullets
   :after org
@@ -180,9 +249,7 @@
                 (org-level-6 . 1.1)
                 (org-level-7 . 1.1)
                 (org-level-8 . 1.1)))
-    (set-face-attribute (car face) nil :font "Liberation Mono" :weight 'regular :height (cdr face)))
-
-;; Make sure org-indent face is available
+  (set-face-attribute (car face) nil :font "opendyslexic3" :weight 'regular :height (cdr face)))
 
 
 ;; Ensure that anything that should be fixed-pitch in Org files appears that way
