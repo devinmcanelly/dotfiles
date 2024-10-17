@@ -3,7 +3,6 @@
 * ToDos
 ** - Org Mode
 *** - Search project directories
-*** - Add Bashrc
 ** - check webi installs
 ** Fix Clipboard integration
 ***  What's a killring?
