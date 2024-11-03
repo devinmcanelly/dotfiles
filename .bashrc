@@ -29,6 +29,6 @@ test -f /usr/share/ublue-os/bluefin-cli/bling.sh && source /usr/share/ublue-os/b
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-alias lls="ls -alt"
+alias lls="ls -alt modified"
 
 alias treee='ls -alt modified --tree -I .cache -L 3 --git-ignore'

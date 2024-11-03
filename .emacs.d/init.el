@@ -107,6 +107,8 @@
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
+;; (use-package forge) ;; Read the docs and setup a token
+
 (use-package lsp-mode
   :ensure t
   :hook ((python-mode . lsp)
@@ -165,12 +167,11 @@
   :hook (org-mode . dw/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"
-        org-hide-emphasis-markers nil
+        org-hide-emphasis-markers 1
         org-agenda-start-with-log-mode t
         org-log-done 'time
         org-log-into-drawer t
-        org-agenda-files '("~/src/tasks.org"
-                           "~/src/top.org"
+        org-agenda-files '("~/src/wiki/"
 			   "~/.dotfiles/README.org")
         org-habit-graph-column 60
         org-todo-keywords
@@ -232,7 +233,7 @@
   :after org
   :hook (org-mode . org-bullets-mode)
   :custom
-  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+  (org-bullets-bullet-list '("◉" "○" "▶" "○" "●" "○" "●")))
 
 ;; Replace list hyphen with dot
 (font-lock-add-keywords 'org-mode
@@ -261,3 +262,6 @@
 (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 (put 'narrow-to-region 'disabled nil)
+
+
+
