@@ -2,7 +2,7 @@
                          ("org" . "https://orgmode.org/elpa/")
                          ("elpa" . "https://elpa.gnu.org/packages/"))
       aindent-tabs-mode nil
-      python-indent-offset 4 ;; TODO: Decide if putting these all up top was foolish? 
+      python-indent-offset 4  
       use-package-always-ensure t
       visible-bell t           
       history-length 25
@@ -20,11 +20,11 @@
    (package-install 'use-package))
 (require 'use-package)     
 
-(setq custom-file (locate-user-emacs-file "custom-vars.el")) ; Using this, emacs can boot into my config
-(load custom-file 'noerror 'nomessage)                       ; from a fresh-install
+(setq custom-file (locate-user-emacs-file "custom-vars.el")) 
+(load custom-file 'noerror 'nomessage)                       
 (add-to-list 'default-frame-alist
-	     '(font . "opendyslexicmono-9"))
-(menu-bar-mode 1)  ; Leave this one on if you're a beginner!
+	     '(font . "DroidSansMono Nerd Font"))
+(menu-bar-mode 1)  
 (tool-bar-mode 1)
 (scroll-bar-mode -1)
 (hl-line-mode 1)
@@ -171,7 +171,7 @@
         org-agenda-start-with-log-mode t
         org-log-done 'time
         org-log-into-drawer t
-        org-agenda-files '("~/src/wiki/"
+        org-agenda-files '("~/src/"
 			   "~/.dotfiles/README.org")
         org-habit-graph-column 60
         org-todo-keywords
@@ -180,7 +180,7 @@
 
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
-
+  (require 'ox-md)
   ;; Configure custom agenda views
   (setq org-agenda-custom-commands
         '(("d" "Dashboard"
@@ -250,7 +250,7 @@
                 (org-level-6 . 1.1)
                 (org-level-7 . 1.1)
                 (org-level-8 . 1.1)))
-  (set-face-attribute (car face) nil :font "opendyslexic3" :weight 'regular :height (cdr face)))
+  (set-face-attribute (car face) nil :font "DroidSansMono Nerd Font" :weight 'regular :height (cdr face)))
 
 
 ;; Ensure that anything that should be fixed-pitch in Org files appears that way
