@@ -23,7 +23,7 @@
 (setq custom-file (locate-user-emacs-file "custom-vars.el")) 
 (load custom-file 'noerror 'nomessage)                       
 (add-to-list 'default-frame-alist
-	     '(font . "DroidSansMono Nerd Font"))
+	     '(font . "MesloLGSDZ Nerd Font Mono"))
 (menu-bar-mode 1)  
 (tool-bar-mode 1)
 (scroll-bar-mode -1)
@@ -148,8 +148,9 @@
 (add-hook 'eshell-mode-hook #'activate-venv-for-shell)
 (add-hook 'shell-mode-hook #'activate-venv-for-shell)
 (setq python-shell-interpreter "ipython")
-(setq python-shell-interpreter-args "--pylab")
-
+(setq python-shell-interpreter-args "--simple-prompt -i")
+(setq python-shell-completion-native-enable t)
+(setq python-shell-completion-native-output-timeout 0.5)
 
 ;; Org Mode Setup
 (defun dw/org-mode-setup ()
@@ -171,8 +172,7 @@
         org-agenda-start-with-log-mode t
         org-log-done 'time
         org-log-into-drawer t
-        org-agenda-files '("~/src/"
-			   "~/.dotfiles/README.org")
+        org-agenda-files '((directory-files-recursively "~/src/" "*.org"))
         org-habit-graph-column 60
         org-todo-keywords
         '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
@@ -250,7 +250,7 @@
                 (org-level-6 . 1.1)
                 (org-level-7 . 1.1)
                 (org-level-8 . 1.1)))
-  (set-face-attribute (car face) nil :font "DroidSansMono Nerd Font" :weight 'regular :height (cdr face)))
+  (set-face-attribute (car face) nil :font "MesloLGSDZ Nerd Font Mono" :weight 'regular :height (cdr face)))
 
 
 ;; Ensure that anything that should be fixed-pitch in Org files appears that way
