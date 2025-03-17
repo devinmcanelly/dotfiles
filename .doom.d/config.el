@@ -36,7 +36,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type :relative)
+(setq display-line-numbers-type 'relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -78,8 +78,12 @@
 (after! org
   (setq org-roam-directory "~/org/notes/"
         org-roam-graph-viewer "/snap/bin/vivaldi.vivaldi-stable" ; not working, files opening in /tmp, maybe snap won't let vivaldi see it?
-        org-agenda-files '("~/org/agenda.org" "~/org/todo.org" "~/org/projects.org")
-        org-fancy-priorities-mode 1))
+        org-agenda-files '("~/org/" "~/org/notes/")
+        org-fancy-priorities-mode 1
+        org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+          (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "BLOCKED(B)" "WAIT(w')" "|" "COMPLETED(c)" "CANC(k)"))
+        ))
 (after! org-fancy-priorities
  (setq
    org-fancy-priorities-list '("[1]" "[2]" "[3]")
@@ -91,20 +95,65 @@
      (?C :foreground "#c678dd" :weight bold))
    org-agenda-block-separator 8411))
 (setq org-agenda-custom-commands
-      '(("v" "A better agenda view"
-         ((tags "PRIORITY=\"A\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "High-priority unfinished tasks:")))
-          (tags "PRIORITY=\"B\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "Medium-priority unfinished tasks:")))
-          (tags "PRIORITY=\"C\""
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "Low-priority unfinished tasks:")))
-          (tags "customtag"
-                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                 (org-agenda-overriding-header "Tasks marked with customtag:")))
+      '(("d" "Dashboard"
+           ((agenda "" ((org-deadline-warning-days 7)))
+            (todo "NEXT"
+                  ((org-agenda-overriding-header "Next Tasks")))
+            (tags-todo "agenda/ACTIVE" ((org-agenda-overriding-header "Active Projects")))))
 
-          (agenda "")
-          (alltodo "")))))
+          ("n" "Next Tasks"
+           ((todo "NEXT"
+                  ((org-agenda-overriding-header "Next Tasks")))))
+
+
+          ;; Low-effort next actions
+          ("e" tags-todo "+TODO=\"NEXT\"+Effort<15&+Effort>0"
+           ((org-agenda-overriding-header "Low Effort Tasks")
+            (org-agenda-max-todos 20)
+            (org-agenda-files org-agenda-files)))
+
+          ("w" "Workflow Status"
+           ((todo "ACTIVE"
+                  ((org-agenda-overriding-header "Active Projects")
+                   (org-agenda-files org-agenda-files)))
+             (todo "READY"
+                  ((org-agenda-overriding-header "Ready for Work")
+                   (org-agenda-files org-agenda-files)))
+             (todo "PLAN"
+                  ((org-agenda-overriding-header "In Planning")
+                   (org-agenda-todo-list-sublevels nil)
+                   (org-agenda-files org-agenda-files)))
+             (todo "BLOCKED"
+                  ((org-agenda-overriding-header "BLOCKED Projects")
+                   (org-agenda-files org-agenda-files)))
+            (todo "WAIT"
+                  ((org-agenda-overriding-header "Waiting on External")
+                   (org-agenda-files org-agenda-files)))
+            (todo "REVIEW"
+                  ((org-agenda-overriding-header "In Review")
+                   (org-agenda-files org-agenda-files)))
+           (todo "BACKLOG"
+                  ((org-agenda-overriding-header "Project Backlog")
+                   (org-agenda-todo-list-sublevels nil)
+                   (org-agenda-files org-agenda-files)))
+            (todo "COMPLETED"
+                  ((org-agenda-overriding-header "Completed Projects")
+                   (org-agenda-files org-agenda-files)))
+            (todo "CANC"
+                  ((org-agenda-overriding-header "Cancelled Projects")
+                   (org-agenda-files org-agenda-files)))))))
+
+(after! org-project-capture
+  (require 'org-projectile)
+  (setq org-project-capture-default-backend
+        (make-instance 'org-project-capture-projectile-backend))
+
+  (setq org-project-capture-projects-file "~/org/projects.org")
+  (org-project-capture-single-file)
+  )
+(map! :leader
+      (:prefix ("n" . "notes")
+       :desc "Capture in current project." "p" #'org-project-capture-capture-for-current-project))
 ;; Start bringing in my old conf here:
+(menu-bar-mode 1)
+(tool-bar-mode 1)
