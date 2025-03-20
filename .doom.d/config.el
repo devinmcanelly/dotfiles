@@ -86,8 +86,8 @@
         ))
 (after! org-fancy-priorities
  (setq
-   org-fancy-priorities-list '("[1]" "[2]" "[3]")
-   ;; org-fancy-priorities-list '("❗" "[B]" "[C]")
+   ;; org-fancy-priorities-list '("[1]" "[2]" "[3]")
+   org-fancy-priorities-list '("‼️" "❗" "❕")
    ;; org-fancy-priorities-list '("🟥" "🟧" "🟨")
    org-priority-faces
    '((?A :foreground "#ff6c6b" :weight bold)
