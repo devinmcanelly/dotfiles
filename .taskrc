@@ -32,8 +32,8 @@ data.location=/home/devin/.task
 #include dark-green-256.theme
 #include dark-blue-256.theme
 #include dark-violets-256.theme
-#include dark-yellow-green.theme
-include dark-gray-256.theme
+include dark-yellow-green.theme
+#include dark-gray-256.theme
 #include dark-gray-blue-256.theme
 #include solarized-dark-256.theme
 #include solarized-light-256.theme
