@@ -1,10 +1,10 @@
 # My Aliases
 
 alias ls="lsd --group-dirs first"
-alias ll='lsd -alF'
+alias ll='lsd -AF'
 alias la='ls -A'
-alias lls="ls -Alt modified"
-alias treee='ls -alt -I .git --tree --depth 4 -I .venv -I __pycache__ -I="*~"'
+alias lls="ls -Alt --git"
+alias treee='ls -at -I .git --tree --depth 4 -I .venv -I __pycache__ -I="*~"'
 alias bat='batcat -pn' # -p so it won't pipe to less unless I tell it too. -n to keep line numbers
 
 export PATH="~/.npm-global/bin:~/.config/emacs/bin/:$PATH:~/.local/bin"
