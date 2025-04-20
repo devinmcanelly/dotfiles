@@ -1,8 +1,9 @@
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
-
+    bindsym $mod+Return exec foot
+    bindsym $mod+Shift+Return split horizontal, exec foot
+    bindsym $mod+Shift+p exec swaymsg workspace 3; exec $term; exec $term; exec emacs; exec logseq; exec brave
     # Kill focused window
     bindsym $mod+Shift+q kill
 

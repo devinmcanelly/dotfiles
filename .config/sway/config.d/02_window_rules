@@ -1,0 +1,16 @@
+
+# Workspace pinning
+for_window [class="Brave"] move to workspace 5
+for_window [class="Logseq"] move to workspace 6
+for_window [app_id="emacs"] move to workspace 7
+for_window [class="steam"] move to workspace 9
+
+for_window [title="Friends List"] move to scratchpad
+for_window [title=".*Steam.*Settings.*"] move to scratchpad
+for_window [title=".*Steam.* - News.*"] move to scratchpad
+for_window [title=".*Server Browser.*"] move to scratchpad
+for_window [title=".*Screenshot Uploader.*"] move to scratchpad
+
+
+# Future external monitor rules (optional for now)
+# workspace 9 output HDMI-A-1
