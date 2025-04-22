@@ -5,3 +5,6 @@
 \#.*
 \#*\#
 \#*
+
+atuin/atuin-receipt.json
+*.bac
