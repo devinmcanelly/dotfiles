@@ -16,18 +16,34 @@ include /etc/sway/config.d/*
 include ./config.d/* 
 #keybinds, in/out
 
-output * bg /usr/share/backgrounds/Atlantic_wave_by_gulfie.png fill
+output * bg /usr/share/backgrounds/GPT_bg1.png fill
 focus_follows_mouse yes
 
-gaps inner 5
-gaps outer 5
-default_border pixel 2
+gaps inner 3
+gaps outer 2
+default_border pixel 1
 smart_gaps on
 mouse_warping none
 
-client.focused          #cba6f7 #1e1e2e #1e1e2e #cba6f7
-client.unfocused        #313244 #1e1e2e #1e1e2e #313244
-client.focused_inactive #313244 #1e1e2e #1e1e2e #313244
-client.urgent           #f38ba8 #1e1e2e #1e1e2e #f38ba8
+
+
+# General colors
+set $bg-color        #1e1e2e
+set $inactive-bg     #2a2a3a
+set $text-color      #d0d0d0
+set $accent-color    #c678dd
+set $hover-color     #ccccff
+set $urgent-color    #ff5370
+
+# Window border settings
+client.focused          $accent-color $accent-color $bg-color $text-color
+client.unfocused        $inactive-bg $inactive-bg $inactive-bg $text-color
+client.focused_inactive $inactive-bg $inactive-bg $inactive-bg $text-color
+client.urgent           $urgent-color $urgent-color $bg-color $text-color
+client.placeholder      $bg-color $bg-color $bg-color $text-color
+
+# Titlebars (optional, remove if you're using border:none or border:pixel)
+default_border pixel 2
+default_floating_border pixel 2
 
 exec waybar

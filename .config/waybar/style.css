@@ -1,59 +1,64 @@
+
 * {
+  font-family: "SauceCodePro Nerd Font", monospace;
+  font-size: 16px;
   border: none;
-  padding: 0 8px;
-  font-family: "SauceCodePro Nerd Font", sans-serif;
-  font-size: 14px;
+  background: transparent;
 }
 
 window#waybar {
-  background: #1e1e2e;
-  color: #d9d9ff;
-}
-
-#workspaces {
-  margin: 0 4px;
+  background-color: #1e1e2e;
+  color: #d0d0d0;
+  border-bottom: 1px solid #2a2a3a;
 }
 
 #workspaces button {
   background: transparent;
-  color: #d9d9ff;
-  padding: 0 12px;
+  color: #d0d0d0;
+  padding: 0 10px;
   margin: 0 2px;
-  border-radius: 12px;
-  transition: background 0.2s, color 0.2s;
-}
-
-#workspaces button:hover {
-  background: #45475a;
-  color: #cba6f7;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #workspaces button.focused {
-  background: #cba6f7;
+  background-color: #c678dd;
   color: #1e1e2e;
 }
 
-#workspaces button.urgent {
-  background: #f38ba8;
+#workspaces button:hover {
+  background-color: #ccccff;
   color: #1e1e2e;
 }
 
-#clock, #battery, #network, #pulseaudio {
-  background: #313244;
-  border-radius: 10px;
+#clock,
+#battery,
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
   padding: 0 10px;
-  margin: 0 4px;
-  transition: background 0.2s;
+  margin: 0 5px;
+  background-color: #2a2a3a;
+  border-radius: 5px;
 }
 
-#clock:hover, #battery:hover, #network:hover, #pulseaudio:hover {
-  background: #45475a;
+#battery.warning {
+  color: #ff5370;
 }
 
-tooltip {
-  background: #1e1e2e;
-  color: #d9d9ff;
-  border-radius: 6px;
-  padding: 5px 8px;
+#battery.charging {
+  color: #a6e22e;
 }
 
+#tray > .passive {
+  opacity: 0.5;
+}
+
+#tray > .active {
+  color: #ccccff;
+}
+
+#tray > .needs-attention {
+  color: #ff5370;
+}
