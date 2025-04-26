@@ -1,14 +1,22 @@
 # Variables
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+set $term foot
+set $menu fuzzel
+
+set $bg-color        #1e1e2e
+set $inactive-bg     #2a2a3a
+set $text-color      #d0d0d0
+set $accent-color    #c678dd
+set $hover-color     #ccccff
+set $urgent-color    #ff5370
 
 set $left h 
 set $down j
 set $up k
 set $right l
 
-set $term foot
-set $menu fuzzel
 font pango:SauceCodePro Nerd Font 10
 
 include /etc/sway/config-vars.d/*
@@ -16,7 +24,14 @@ include /etc/sway/config.d/*
 include ./config.d/* 
 #keybinds, in/out
 
-output * bg /usr/share/backgrounds/GPT_bg1.png fill
+
+# Monitor setup
+output DP-7 resolution 1920x1080 position 0 0
+output eDP-1 resolution 1920x1200 position 1920 0
+
+output eDP-1  bg /usr/share/backgrounds/GPT_bg1.png fill
+output DP-7  bg /usr/share/backgrounds/GPT_bg0.png fill
+
 focus_follows_mouse yes
 
 gaps inner 3
@@ -27,13 +42,6 @@ mouse_warping none
 
 
 
-# General colors
-set $bg-color        #1e1e2e
-set $inactive-bg     #2a2a3a
-set $text-color      #d0d0d0
-set $accent-color    #c678dd
-set $hover-color     #ccccff
-set $urgent-color    #ff5370
 
 # Window border settings
 client.focused          $accent-color $accent-color $bg-color $text-color

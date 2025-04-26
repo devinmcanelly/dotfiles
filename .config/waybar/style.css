@@ -62,3 +62,39 @@ window#waybar {
 #tray > .needs-attention {
   color: #ff5370;
 }
+/* Power group styling */
+#custom-power,
+#custom-quit,
+#custom-lock, 
+#custom-reboot {
+  padding: 0 10px;
+  margin: 0 2px;
+  background-color: #2a2a3a;
+  border-radius: 5px;
+  color: #d0d0d0;
+}
+
+#custom-power {
+  color: #ff5370;
+}
+
+#custom-quit {
+  color: #ff9e64;
+}
+
+#custom-lock {
+  color: #7aa2f7;
+}
+
+#custom-reboot {
+  color: #9ece6a;
+}
+
+/* Add hover effects for the power buttons */
+#custom-power:hover,
+#custom-quit:hover,
+#custom-lock:hover,
+#custom-reboot:hover {
+  background-color: #3a3a4a;
+  color: #ccccff;
+}
