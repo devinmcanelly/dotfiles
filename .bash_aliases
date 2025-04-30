@@ -5,7 +5,6 @@ alias ll='lsd -AF'
 alias la='ls -A'
 alias lls="ls -Alt --git"
 alias treee='ls -at -I .git --tree --depth 4 -I .venv -I __pycache__ -I="*~"'
-alias bat='batcat -pn' # -p so it won't pipe to less unless I tell it too. -n to keep line numbers
 
 export PATH="~/.npm-global/bin:~/.config/emacs/bin/:$PATH:~/.local/bin"
 ## Poetry Completions

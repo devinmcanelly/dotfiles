@@ -8,3 +8,4 @@
 
 atuin/atuin-receipt.json
 *.bac
+.config/atuin/atuin-receipt.json

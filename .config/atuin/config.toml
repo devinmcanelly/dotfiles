@@ -194,7 +194,7 @@ common_subcommands = [
 #   "systemctl",
 #   "tmux",
 #   "yarn",
-# ]
+ ]
 
 ## Set commands that should be totally stripped and ignored from stats
 # common_prefix = ["sudo"]
