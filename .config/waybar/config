@@ -39,12 +39,21 @@
     "format": "",
     "tooltip": false,
     "on-click": "shutdown now"
+<<<<<<< HEAD
     },
 
+=======
+    }  
+}
+>>>>>>> a1a6ec6f13f58421553be3d1035f07c3ef04791f
 "clock": {
     "interval": 60,
     "format": "{:%a %b %d  %I:%M %p}"
     },
+<<<<<<< HEAD
+=======
+}
+>>>>>>> a1a6ec6f13f58421553be3d1035f07c3ef04791f
  "battery": {
     "format": "{capacity}% ",
     "format-charging": "{capacity}% ",
