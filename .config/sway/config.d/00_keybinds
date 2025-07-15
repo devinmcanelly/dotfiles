@@ -1,6 +1,4 @@
 # Basics:
-#
-    # Start a terminal
     bindsym $mod+Return exec foot
     bindsym $mod+Shift+Return split horizontal, exec foot
     bindsym $mod+Shift+p exec swaymsg workspace 3; exec $term; exec $term; exec emacs; exec logseq; exec brave
@@ -138,7 +136,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 #
 # Utilities:
-#
     # Special keys to adjust volume via PulseAudio
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
@@ -147,5 +144,7 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
+
+
+    bindsym $mod+Shift+r exec ~/.local/bin/toggle_idle.sh
     bindsym Print exec grim -g "$(slurp)" - | wl-copy

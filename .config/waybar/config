@@ -3,8 +3,8 @@
   "position": "top",
   "height": 30,
   "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "battery", "network", "group/group-power"],
+  "modules-center": ["clock", "tray"],
+  "modules-right": ["pulseaudio", "battery","bluetooth", "network", "group/group-power"],
 
 "group/group-power": {
     "orientation": "inherit",
@@ -14,11 +14,19 @@
         "transition-left-to-right": false
     },
     "modules": [
-        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/power",
         "custom/quit",
         "custom/lock",
         "custom/reboot",
     ]
+},
+
+"bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-disconnected": " Off",
+    "tooltip-format": "{device_alias} ({device_address})",
+    "on-click": "blueman-manager"
 },
 "custom/quit": {
     "format": "󰗼",
@@ -39,22 +47,12 @@
     "format": "",
     "tooltip": false,
     "on-click": "shutdown now"
-<<<<<<< HEAD
     },
-
-=======
-    }  
-}
->>>>>>> a1a6ec6f13f58421553be3d1035f07c3ef04791f
 "clock": {
     "interval": 60,
     "format": "{:%a %b %d  %I:%M %p}"
     },
-<<<<<<< HEAD
-=======
-}
->>>>>>> a1a6ec6f13f58421553be3d1035f07c3ef04791f
- "battery": {
+"battery":{
     "format": "{capacity}% ",
     "format-charging": "{capacity}% ",
     "interval": 60
