@@ -1,10 +1,12 @@
 # My Aliases
 
+alias bat='batcat'
 alias ls="lsd --group-dirs first"
 alias ll='lsd -AF'
 alias la='ls -A'
 alias lls="ls -Alt --git"
 alias treee='ls -at -I .git --tree --depth 4 -I .venv -I __pycache__ -I="*~"'
+alias tree='ls -at -I .git --tree --depth 2 -I .venv -I __pycache__ -I="*~"'
 
 export PATH="~/.npm-global/bin:~/.config/emacs/bin/:$PATH:~/.local/bin"
 ## Poetry Completions
@@ -228,3 +230,5 @@ _poetry_c609ab21da895aa9_complete()
 
 complete -o default -F _poetry_c609ab21da895aa9_complete poetry
 complete -o default -F _poetry_c609ab21da895aa9_complete /home/devin/poetry
+
+

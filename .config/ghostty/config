@@ -23,7 +23,7 @@
 
 # Config syntax crash course
 # ==========================
-# # The config file consists of simple key-value pairs,
+# # The config file consists of simpele key-value pairs,
 # # separated by equals signs.
 # font-family = Iosevka
 # window-padding-x = 2
@@ -48,6 +48,5 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = PencilLight
-
- cursor-style = underline
+theme = embers-dark
+cursor-style = underline
