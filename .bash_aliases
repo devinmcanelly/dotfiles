@@ -1,6 +1,5 @@
 # My Aliases
 
-alias bat='batcat'
 alias ls="lsd --group-dirs first"
 alias ll='lsd -AF'
 alias la='ls -A'
