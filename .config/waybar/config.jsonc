@@ -1,0 +1,162 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 5,
+  //"height": 30,
+  "modules-left": [
+                  "sway/workspaces",
+                  "sway/mode",
+                  "sway/scratchpad",
+                  "mdp"
+                  ],
+  "modules-center": [
+                    "group/monitor",
+                    "clock",
+                    "idle_inhibitor",
+                    "backlight"
+                    ],
+  "modules-right": ["pulseaudio", "battery","bluetooth", "network", "tray", "group/group-power"],
+
+"group/monitor": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false
+        },
+    "modules": [
+    "cpu",
+    "memory",
+    "temperature"
+    ],
+        },
+"group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false
+    },
+    "modules": [
+        "custom/power",
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot"
+    ]
+},
+ "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+"tray": {
+        "spacing": 10,
+},
+"bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-disconnected": " Off",
+    "tooltip-format": "{device_alias} ({device_address})",
+    "on-click": "blueman-manager"
+},
+"custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+"
+},
+"custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "swaylock"
+},
+"custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot"
+},
+"custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
+    },
+"clock": {
+    "interval": 60,
+    "format": "{:%a %b %d  %I:%M %p}"
+    },
+"battery":{
+    "format": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}% ",
+    "interval": 60
+  },
+"backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}",
+        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        },
+
+ "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+"network": {
+  "format-wifi": " {essid}",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": " Disconnected",
+    "tooltip": false
+    },
+"pulseaudio": {
+    "format": "{volume}% ",
+    "format-muted": "Muted ",
+    "scroll-step": 5
+  },
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+            "3": "󰶍",
+             "4": "",
+             "5": "",
+             "6": "󱌢",
+             "7":  "",
+             "8": "",
+             "9": "",
+             "10": "󱄔",
+            "urgent": "",
+             //"focused": "",
+             "default": ""
+         },
+    },
+ "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["0", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+     "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    }
+
+}
