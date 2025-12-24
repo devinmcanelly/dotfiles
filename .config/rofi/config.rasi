@@ -166,4 +166,6 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "material"
+//@theme "material"
+
+@theme "/usr/share/rofi/themes/purple.rasi"

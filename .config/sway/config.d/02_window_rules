@@ -1,7 +1,8 @@
 
 # Workspace pinning
-for_window [class="Brave"] move to workspace 5
-for_window [class="Logseq"] move to workspace 6
+for_window [app_id="app.zen_browser.zen"] move to workspace 2
+for_window [app_id="eu.betterbird.Betterbird"] move to workspace 3
+for_window [app_id="chrome-mcnnfklmhojcmhoddbjjcmgamgiiegfh-Default"] move to workspace 6 
 for_window [app_id="emacs"] move to workspace 7
 for_window [class="steam"] move to workspace 9
 
